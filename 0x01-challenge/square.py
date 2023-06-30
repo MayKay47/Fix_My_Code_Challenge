@@ -7,27 +7,26 @@ class Square():
 
     def __init__(self, *args, **kwargs):
         """ Initializes the square """
-        self.width = 0
-        self.height = 0
+        self.side = 0
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Returns the area of the square """
-        return self.width * self.height
+        return self.side ** 2
 
-    def PermiterOfMySquare(self):
+    def perimeter_of_my_square(self):
         """ Returns the perimeter of the square """
-        return self.width * 2 + self.height * 2
+        return self.side * 4
 
     def __str__(self):
         """ Returns the dimensions of the square """
-        return "{}/{}".format(self.width, self.height)
+        return "Square with side length of {}".format(self.side)
 
 
 if __name__ == "__main__":
 
-    s = Square(width=30, height=40)
+    s = Square(side=30)
     print(s)
     print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print(s.perimeter_of_my_square())
